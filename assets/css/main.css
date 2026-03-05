@@ -327,7 +327,6 @@ body.nav-open .nav-panel{
   position: relative;
   height: var(--hero-h);
   overflow: hidden;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -922,5 +921,124 @@ body.nav-open .nav-panel{
 @media (min-width:801px){
   .nav-panel{
     display: none;
+  }
+}
+
+
+/* =========================
+   ARCHIVE: HERO
+   ========================= */
+
+.hero--archive{
+  height: 465px; /* como você pediu */
+  position: relative;
+  overflow: hidden;
+
+  /* URL RELATIVA (assets/images) */
+  background-image: url("../images/archive-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* overlay escuro 60% */
+.hero--archive::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 1;
+}
+
+/* conteúdo do hero (título) */
+.hero--archive .hero-inner{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* igual seu layout */
+}
+
+/* =========================
+   ARCHIVE: CATEGORIAS (BOTÕES)
+   ========================= */
+
+/* garante que o archive NÃO "puxa" cards pra cima como a home */
+.archive-grid{
+  margin-top: 0 !important;
+}
+
+/* wrapper da barra */
+.catsbar{
+  margin: 18px 0 22px;
+}
+
+/* lista sem bolinhas e em linha */
+.catsbar-list{
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* cada item não precisa de nada */
+.catsbar-item{
+  margin: 0;
+  padding: 0;
+}
+
+/* botão */
+.catsbar-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+
+  background: #10B7D6;
+  color: #ffffff;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: opacity .2s ease, transform .15s ease;
+}
+
+.catsbar-link:hover{
+  opacity: .92;
+  transform: translateY(-1px);
+}
+
+/* ativo (pode deixar branco ou manter azul) */
+.catsbar-link.is-active{
+  background: #ffffff;
+  color: #10B7D6;
+}
+
+/* ===== mobile ===== */
+@media (max-width: 520px){
+  .catsbar{
+    margin: 14px 0 18px;
+  }
+
+  .catsbar-link{
+    height: 34px;
+    font-size: 11px;
+    padding: 0 12px;
   }
 }
